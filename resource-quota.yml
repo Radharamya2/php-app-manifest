@@ -2,6 +2,7 @@
 apiVersion: v1
 kind: ResourceQuota
 metadata:
+  namespace: bankapp
   name: myrq
 spec:
   hard:

@@ -1,6 +1,7 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
+  namespace: bankapp
   name: mysql
 
 spec:
@@ -14,6 +15,7 @@ spec:
 
   template:
     metadata:
+  namespace: bankapp
       labels:
         app: app-database
 
@@ -44,6 +46,7 @@ spec:
 
   volumeClaimTemplates:
     - metadata:
+  namespace: bankapp
         name: mysql-data
 
       spec:
