@@ -13,8 +13,7 @@ spec:
       app: app-database
 
   template:
-    metadata:
-  namespace: bankapp
+    metadata:q
       labels:
         app: app-database
 
@@ -45,7 +44,6 @@ spec:
 
   volumeClaimTemplates:
     - metadata:
-  namespace: bankapp
         name: mysql-data
 
       spec:
