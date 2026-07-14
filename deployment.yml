@@ -2,20 +2,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: bankapp
   namespace: bankapp
   name: myapp
+
 spec:
   replicas: 3
   selector:
     matchLabels:
       app: nginx
+
   template:
     metadata:
-      name: bankapp
       namespace: bankapp
       labels:
         app: nginx
+
     spec:
       containers:
         - name: cont1
@@ -23,12 +24,12 @@ spec:
           ports:
             - containerPort: 80
 
-        #configmap Integration
+          # ConfigMap Integration
           envFrom:
             - configMapRef:
                 name: bankapp-config
 
-        #Resource Quota
+          # Resource Quota
           resources:
             requests:
               cpu: "100m"
